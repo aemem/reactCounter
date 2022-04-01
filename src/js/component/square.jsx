@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 const Square = () => {
-	return <div className="squares">0</div>;
+	return <div className="squares">{timer}</div>;
 };
 
 Square.propTypes = {
-	name: PropTypes.string,
+	timer: propTypes.string,
 };
 
 export default Square;
