@@ -1,27 +1,29 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-
-import Square from "./square.jsx";
-import Clock from "./clock.jsx";
+import React, { useState, useEffect } from "react";
 
 const Home = () => {
 	const [timer, setTimer] = useState(0);
 
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTimer(timer + 1);
+		}, 1000);
+		return () => {
+			clearInterval(interval);
+		};
+	});
 	return (
 		<div className="row" id="counter">
-			<Clock />
-			<Square />
-			<Square />
-			<Square />
-			<Square />
-			<Square />
-			<Square />
+			<div className="clock">
+				<i className="fa-regular fa-clock"></i>
+			</div>
+			<div className="squares">{timer}</div>
+			<div className="squares">{timer}</div>
+			<div className="squares">{timer}</div>
+			<div className="squares">{timer}</div>
+			<div className="squares">{timer}</div>
+			<div className="squares">{timer}</div>
 		</div>
 	);
-};
-
-Home.propTypes = {
-	name: PropTypes.string,
 };
 
 export default Home;
