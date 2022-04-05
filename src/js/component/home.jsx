@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 const Home = () => {
 	const [timer, setTimer] = useState(0);
-	const [start, setStart] = useState(false);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
